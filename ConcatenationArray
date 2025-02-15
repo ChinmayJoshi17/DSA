@@ -1,0 +1,9 @@
+class Solution {
+public:
+    vector<int> getConcatenation(vector<int>& nums) 
+    {
+        auto cat = vector<int>(nums);
+        cat.insert(cat.end(), nums.begin(), nums.end());
+        return cat;
+    }
+};
