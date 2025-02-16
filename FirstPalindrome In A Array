@@ -1,0 +1,30 @@
+class Solution 
+{
+    public:
+        string firstPalindrome(vector<string>& words) 
+        {
+            for(int i=0;i<words.size();i++)
+            {
+                string str=words[i];
+                int left=0,right=str.size()-1;
+                bool xyz=1;
+                while(left<=right)
+                {
+                    if(str[left]!=str[right])
+                    {
+                        xyz=0;
+                        break;
+                    }
+                    left++;
+                    right--;
+
+                }
+                if(xyz)
+                    {
+                        return str;
+                    }
+            }
+            return "";
+        }
+
+};
