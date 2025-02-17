@@ -1,0 +1,46 @@
+class Solution{
+	public:
+		int maximum(vector<int>& nums)
+		{
+			int left=0;
+			int right=nums.size()-1;
+			int n=nums.size();
+			int max=nums[n/2];
+			while(left<right)
+			{
+				if(nums[left]>max)
+				{
+					max=nums[left];
+				}
+				else if(nums[right]>max)
+				{
+					max=nums[right];
+				}
+				left++;
+				right--;
+			}
+			return max;	
+		}
+		
+		int minimum(vector<int> & nums)
+		{
+			int left=0;
+			int right=nums.size()-1;
+			int n=nums.size();
+			int min=nums[n/2];
+			while(left<right)
+			{
+				if(nums[left]<min)
+				{
+					min=nums[left];
+				}
+				else if(nums[right]<min)
+				{
+					min=nums[right];
+				}
+				left++;
+				right--;
+			}
+			return min;
+		}
+};
