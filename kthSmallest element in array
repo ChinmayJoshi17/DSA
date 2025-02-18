@@ -1,0 +1,19 @@
+class Solution {
+  public:
+    // arr : given array
+    // k : find kth smallest element and return using this function
+    int kthSmallest(vector<int> &arr, int k) {
+       // sort(arr.begin(),arr.end());
+        for(int i=0;i<arr.size();i++)
+        {
+            for(int j=i+1;j<arr.size();j++)  // Fixed the loop incrementing issue (was 'i++' instead of 'j++')
+            {
+                if(arr[j]<arr[i])
+                {
+                    swap(arr[i], arr[j]);  // Swap the elements
+                }
+            }
+        }
+        return arr[k-1];
+    }
+};
